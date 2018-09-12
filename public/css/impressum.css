@@ -1,0 +1,12 @@
+.impressum {
+    font-family: arial, sans-serif;
+    text-align: center;
+    width: 90%;
+    height: 80%;
+    margin: 5%
+}
+
+.colored-impressum {
+
+    background-color: #efefef
+}

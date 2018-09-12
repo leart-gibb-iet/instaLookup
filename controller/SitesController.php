@@ -22,7 +22,7 @@
  *     - Daten welche z.B. von einem Formular kommen validieren und dem Model
  *         übergeben, damit sie in der Datenbank persistiert werden können.
  */
-class DefaultController
+class SitesController
 {
     /**
      * Die index Funktion des DefaultControllers sollte in jedem Projekt
@@ -37,8 +37,51 @@ class DefaultController
         //   "default_index" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
         $view = new View('default_index');
-        $view->title = 'Startseite';
-        $view->heading = 'Startseite';
+        $view->title = 'instaLookup';
+        $view->heading = 'instaLookup';
+        $view->stylesheets = array("instagramSearch.css","style.css");
+        $view->javascripts = array("instagramSearch.js");
         $view->display();
     }
+	
+	public function impressum()
+	{
+		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
+        //   "impressum" rendern. Wie das genau funktioniert, ist in der
+        //   View Klasse beschrieben.
+        $view = new View('impressum');
+        $view->title = 'Impressum';
+        $view->heading = 'Impressum';
+        $view->stylesheets = array("impressum.css","style.css");
+        $view->display();
+		
+    }
+    
+	public function login()
+	{
+		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
+        //   "login" rendern. Wie das genau funktioniert, ist in der
+        //   View Klasse beschrieben.
+        $view = new View('login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->stylesheets = array("style.css");
+        $view->display();
+		
+    }
+
+    public function kontakt()
+	{
+		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
+        //   "kontakt" rendern. Wie das genau funktioniert, ist in der
+        //   View Klasse beschrieben.
+        $view = new View('kontakt');
+        $view->title = 'Kontakt';
+        $view->heading = 'Kontakt';
+        $view->stylesheets = array("kontakt.css","style.css");
+        $view->display();
+		
+    }
+
+
 }
