@@ -1,8 +1,8 @@
 
 
   <!-- Modal Content -->
-  <form class="modal-content animate signup" action="/action_page.php" id="id02">
- 
+  <form class="modal-content animate signup" action="/user/doCreate" id="id02">
+
 
     <div class="containerLogin">
       <label for="uname"><b>Username:</b></label>

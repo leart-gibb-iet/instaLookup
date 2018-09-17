@@ -34,6 +34,21 @@ class UserController
         $view->display();
     }
 
+    public function doCreate()
+{
+    if ($_POST['send']) {
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $userRepository = new UserRepository();
+        $userRepository->create($firstName, $lastName, $email, $password);
+    }
+    // Anfrage an die URI /user weiterleiten (HTTP 302)
+    header('Location: /user');
+}
+
+
     public function Update()
     {
 

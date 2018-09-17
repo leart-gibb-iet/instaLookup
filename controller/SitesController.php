@@ -91,14 +91,14 @@ class SitesController
 
         $view = new View('user_panel');
         $view->title = 'User Panel';
-        $view->heading = 'User Panel';
-        $view->stylesheets = array("style.css");
+        $view->heading = 'User Panel';    
         $view->javascripts = array("modalForm.js");
+        $view->stylesheets = array("style.css", "modalForm.css");
         $view->display();
 
       }
 
-     
+
 
 
 
