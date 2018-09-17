@@ -85,6 +85,7 @@ class View
         require './../view/header.php';
         require $this->viewfile;
         require './../view/modal_login_form.php';
+        
         require './../view/footer.php';
     }
 
