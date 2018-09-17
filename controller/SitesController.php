@@ -39,7 +39,7 @@ class SitesController
         $view = new View('default_index');
         $view->title = 'instaLookup';
         $view->heading = 'instaLookup';
-        $view->stylesheets = array("instagramSearch.css","style.css");
+        $view->stylesheets = array("modal_login_form.css","instagramSearch.css","style.css");
         $view->javascripts = array("instagramSearch.js");
         $view->display();
     }
@@ -93,6 +93,7 @@ class SitesController
         $view->display();
 
       }
+
 
 
 

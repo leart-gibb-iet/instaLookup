@@ -9,6 +9,10 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  
+ 
+
+ 
 
     <?php  
     if(isset($stylesheets))
@@ -43,9 +47,10 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/user">Benutzer</a></li>
-			<li><a href="/sites/impressum">Impressum</a></li>
-			<li><a href="/sites/kontakt">Kontakt</a></li>
-			<li><a href="/sites/login">Login</a></li>
+            <li><a href="/user/create">Benutzer erstellen</a></li>
+			      <li><a href="/sites/impressum">Impressum</a></li>
+	      		<li><a href="/sites/kontakt">Kontakt</a></li>
+	      		<li><a href="/sites/login">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
