@@ -52,7 +52,7 @@ class SitesController
         $view = new View('impressum');
         $view->title = 'Impressum';
         $view->heading = 'Impressum';
-        $view->stylesheets = array("impressum.css","style.css");
+        $view->stylesheets = array("modal_login_form.css","impressum.css","style.css");
         $view->display();
 		
     }
@@ -65,7 +65,7 @@ class SitesController
         $view = new View('login');
         $view->title = 'Login';
         $view->heading = 'Login';
-        $view->stylesheets = array("style.css");
+        $view->stylesheets = array("style.css","modal_login_form.css");
         $view->display();
 		
     }
@@ -78,7 +78,7 @@ class SitesController
         $view = new View('kontakt');
         $view->title = 'Kontakt';
         $view->heading = 'Kontakt';
-        $view->stylesheets = array("style.css");
+        $view->stylesheets = array("style.css","modal_login_form.css");
         $view->display();
 		
     }

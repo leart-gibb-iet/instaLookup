@@ -1,5 +1,3 @@
-<!-- Button to open the modal login form -->
-<button class="btn btn-default"  onclick="document.getElementById('id01').style.display='block'">Login</button>
 
 <!-- The Modal -->
 <div id="id01" class="modal">

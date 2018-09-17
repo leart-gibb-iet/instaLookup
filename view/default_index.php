@@ -4,7 +4,7 @@
     <form class="form-inline" onsubmit="return false;">
         <div class="form-group">
             <label for="userName">Instagram Username:</label>
-            <input type="text" class="form-control" id="userName">
+            <input type="text" class="form-control" id="userName" placeholder="Instagram Username">
             <button type="button" id="showImageButton" class="btn btn-default">Show Image</button>
         </div>
         
