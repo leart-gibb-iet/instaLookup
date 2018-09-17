@@ -9,15 +9,15 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  
- 
 
- 
 
-    <?php  
+
+
+
+    <?php
     if(isset($stylesheets))
     {
-        foreach($stylesheets as $style) 
+        foreach($stylesheets as $style)
         {
           echo '<link href="/css/'.$style.'" rel="stylesheet">';
           echo "\n";
@@ -45,7 +45,6 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
             <li><a href="/sites/UserPanel">User Panel</a></li>
 			      <li><a href="/sites/impressum">Impressum</a></li>
 	      		<li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>

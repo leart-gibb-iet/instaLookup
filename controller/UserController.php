@@ -17,8 +17,8 @@ class UserController
         $view->heading = 'Benutzer';
         $view->users = $userRepository->readAll();
         $view->display();
-        
-      
+
+
 
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
         header('Location: /user/create');
@@ -48,7 +48,7 @@ class UserController
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /user');
     }
-	
-	
-	
+
+
+
 }
