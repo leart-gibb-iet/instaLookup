@@ -17,7 +17,7 @@
        <label for="email"><b>Email:</b></label>
       <input type="text" placeholder="example@x.ch" name="email" required>
 
-      <button type="submit" id="signUpBtn" class="btn btn-default">Sign Up</button>
+      <button type="submit" id="signUpFormBtn" class="btn btn-default">Sign Up</button>
     </div>
 
     <div class="containerLogin" style="background-color:#f1f1f1">

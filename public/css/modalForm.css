@@ -104,6 +104,12 @@ button:hover {
     float: right;
 }
 
+#signUpFormBtn {
+
+    width: 100%;
+
+}
+
 /* Center the avatar image inside this container */
 .imgcontainer {
     text-align: center;
