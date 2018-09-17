@@ -46,6 +46,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
+            <li><a href="/sites/UserPanel">User Panel</a></li>
 			      <li><a href="/sites/impressum">Impressum</a></li>
 	      		<li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
           </ul>
