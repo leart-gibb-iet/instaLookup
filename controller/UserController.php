@@ -16,6 +16,7 @@ class UserController
         $view = new View('user_form');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
+        $view->stylesheets = array("kontakt.css","style.css");
         $view->display();
     }
 	
