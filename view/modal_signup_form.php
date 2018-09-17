@@ -1,4 +1,5 @@
 
+
   <!-- Modal Content -->
   <form class="modal-content animate signup" action="/action_page.php" id="id02">
  
@@ -16,12 +17,11 @@
        <label for="email"><b>Email:</b></label>
       <input type="text" placeholder="example@x.ch" name="email" required>
 
-      <button type="submit" id="loginFormBtn" class="btn btn-default">Sign Up</button>
+      <button type="submit" id="signUpBtn" class="btn btn-default">Sign Up</button>
     </div>
 
     <div class="containerLogin" style="background-color:#f1f1f1">
-      <button class="btn btn-default" type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Sign Up</button>
-      <button id="cancelBtn" class="btn btn-default" type="button"  onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button  class="btn btn-default cancelbtn" type="button"  onclick="document.getElementById('id02').style.display='none'">Cancel</button>
     </div>
   </form>
 </div>

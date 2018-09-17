@@ -56,7 +56,7 @@
 }
 
 /* Bordered form */
-.modal-content.animate {
+.modal-content.animate, .modal-content.animate.signup {
     border: 3px solid #f1f1f1;
     max-width: 700px;
     margin-top: 100px;
@@ -66,12 +66,6 @@
 .modal-content .container {
 
     width: 100%;
-}
-
-#loginFormBtn {
-
-    width: 100%;
-
 }
 
 /* Full-width inputs */
@@ -85,14 +79,10 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-.LoginButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+#loginFormBtn {
+
     width: 100%;
+
 }
 
 /* Add a hover effect for buttons */
@@ -105,7 +95,13 @@ button:hover {
     width: auto;
     padding: 10px 18px;
     
-   
+}
+
+.signupbtn {
+
+    width: auto;
+    padding: 10px 18px;
+    float: right;
 }
 
 /* Center the avatar image inside this container */
@@ -141,6 +137,10 @@ span.signup {
     .cancelbtn {
         width: 100%;
     }
+
+    .signupbtn {
+        width: 100%;
+    }
 }
 
 
@@ -150,3 +150,4 @@ span.signup {
     display: none;
 
 }
+

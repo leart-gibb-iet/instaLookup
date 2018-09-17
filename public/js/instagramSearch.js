@@ -25,6 +25,10 @@ $(document).ready(function () {
 
 function getInstagramProfileId() {
 
+    $("#profileImageContainer").attr("src", "https://picload.org/thumbnail/dlwrgiow/ufo-2.jpg");
+    // testing purpose
+    
+/*
     var username = $("#userName").val();
     var profileUrl = "https://www.instagram.com/" + username + "/";
     debugger;
@@ -51,11 +55,12 @@ function getInstagramProfileId() {
         });
 
     });
-
+*/
 
 }
 
 function getProfileImageUrl(profileId) {
+
 
     var instaUrl = "https://i.instagram.com/api/v1/users/" + profileId + "/info/";
 
@@ -83,7 +88,7 @@ function getProfileImageUrl(profileId) {
 }
 
 function showProfileImage(finalUrl) {
-
+   
     $("#profileImageContainer").attr("src", finalUrl);
 
 }
