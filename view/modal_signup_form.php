@@ -3,7 +3,7 @@
   <!-- Modal Content -->
   <form class="modal-content animate signup" action="/user/doCreate" id="id02">
 
-
+    <!-- Sign Up Formular -->
     <div class="containerLogin">
       <label for="username"><b>Username:</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
@@ -19,7 +19,7 @@
 
       <button type="submit" id="signUpFormBtn" class="btn btn-default">Sign Up</button>
     </div>
-
+    <!-- Cancel Button -->
     <div class="containerLogin" style="background-color:#f1f1f1">
       <button  class="btn btn-default cancelbtn" type="button"  onclick="document.getElementById('id02').style.display='none'">Cancel</button>
     </div>

@@ -93,7 +93,7 @@ class SitesController
         $view->title = 'User Panel';
         $view->heading = 'User Panel';    
         $view->javascripts = array("modalForm.js");
-        $view->stylesheets = array("style.css", "modalForm.css");
+        $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
         $view->display();
 
       }
