@@ -43,7 +43,7 @@ class SitesController
         $view->javascripts = array("instagramSearch.js");
         $view->display();
     }
-	
+
 	public function impressum()
 	{
 		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
@@ -54,9 +54,9 @@ class SitesController
         $view->heading = 'Impressum';
         $view->stylesheets = array("impressum.css","style.css");
         $view->display();
-		
+
     }
-    
+
 	public function login()
 	{
 		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
@@ -67,7 +67,7 @@ class SitesController
         $view->heading = 'Login';
         $view->stylesheets = array("style.css");
         $view->display();
-		
+
     }
 
     public function kontakt()
@@ -78,10 +78,22 @@ class SitesController
         $view = new View('kontakt');
         $view->title = 'Kontakt';
         $view->heading = 'Kontakt';
-        $view->stylesheets = array("kontakt.css","style.css");
+        $view->stylesheets = array("style.css");
         $view->display();
-		
+
     }
+
+      public function userPanel()
+      {
+
+        $view = new View('User Panel');
+        $view->title = 'User Panel';
+        $view->heading = 'User Panel';
+        $view->stylesheets = array("style.css");
+        $view->display();
+
+      }
+
 
 
 }

@@ -16,9 +16,20 @@ class UserController
         $view = new View('user_form');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
+        $view->stylesheets = array("kontakt.css", "style.css");
         $view->display();
     }
-	
-	
-	
+
+    public function Update()
+    {
+
+      $view = new View('User_panel');
+      $view->title = 'benutzerDaten ändern';
+      $view->heading = 'benutzerDaten ändern';
+      $view->stylesheets = array("userPanel.css", "style.css");
+      $view->display();
+    }
+
+
+
 }
