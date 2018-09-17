@@ -86,7 +86,7 @@ class SitesController
       public function userPanel()
       {
 
-        $view = new View('User Panel');
+        $view = new View('user_panel');
         $view->title = 'User Panel';
         $view->heading = 'User Panel';
         $view->stylesheets = array("style.css");

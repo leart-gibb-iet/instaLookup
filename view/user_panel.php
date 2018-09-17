@@ -4,7 +4,7 @@
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="https://scontent-mxp1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11202845_1080639941963985_6572415677120962681_n.jpg?oh=32e4325a7b98de3a44200f57309c9d4e&oe=55CA4649" class="img-responsive" alt="">
+					<img src="#" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
