@@ -20,7 +20,7 @@ class="close" title="Close Modal">&times;</span>
 
     <div class="containerLogin" style="background-color:#f1f1f1">
       <button class="btn btn-default cancelbtn" type="button"  onclick="document.getElementById('id01').style.display='none'">Cancel</button>
-      <span class="signup"><a href="#">Sign up</a> now!</span>
+      <span class="signup"><a onclick="">Sign up</a> now!</span>
       <span>    
     </div>
   </form>
