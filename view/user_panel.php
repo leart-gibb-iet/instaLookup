@@ -1,16 +1,9 @@
 <div class="container_UserPanel">
     <div class="row profile">
     	<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src="" class="img-responsive">
-				</div>
-
-			</div>
-		</div>
+		
+	
 		<div class="userPanel">
-
       <div class="FormUserPanel">
               <form action="/action_page.php">
           <br>
@@ -26,5 +19,6 @@
 
             </div>
 	</div>
-	</div>
 </div>
+</div>
+

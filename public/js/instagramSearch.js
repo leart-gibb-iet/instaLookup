@@ -1,9 +1,9 @@
 $(document).ready(function () {
-
+    // Hide Error message
     $("#errorMessageBox").text("");
     $("#errorMessageBox").hide();
 
-    
+    // you can use Return instead of Button click
     $("#userName").keyup(function(e) {
     e.preventDefault();
         if(e.keyCode == 13)
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     
     
-    
+    // calls getInstagramProfileId function
     $("#showImageButton").click(function () {
         $("#errorMessageBox").text("");
         $("#errorMessageBox").hide();
@@ -23,6 +23,10 @@ $(document).ready(function () {
     });
 });
 
+/**
+ *  get Instagram Profile Id:
+ *  
+ */
 function getInstagramProfileId() {
 
     $("#profileImageContainer").attr("src", "https://picload.org/thumbnail/dlwrgiow/ufo-2.jpg");
@@ -59,6 +63,12 @@ function getInstagramProfileId() {
 
 }
 
+
+/**
+ * get the image url with the profileId as param
+ * 
+ * @param {*} profileId 
+ */
 function getProfileImageUrl(profileId) {
 
 
@@ -86,7 +96,11 @@ function getProfileImageUrl(profileId) {
 
 
 }
-
+/**
+ *  adds the url to an img container which is shown under the Searchbar
+ * 
+ * @param {*} finalUrl 
+ */
 function showProfileImage(finalUrl) {
    
     $("#profileImageContainer").attr("src", finalUrl);
