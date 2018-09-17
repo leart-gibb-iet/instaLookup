@@ -37,12 +37,17 @@ class UserController
     public function doCreate()
 {
     if ($_POST['send']) {
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
+        $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $userRepository = new UserRepository();
-        $userRepository->create($firstName, $lastName, $email, $password);
+        $id = $userRepository->create($username, $email, $password);
+        session_start();
+        $_SESSION["id"] = $id;
+        $_SESSION["email"] = $email;
+        $_SESSION["password"] = $password;
+        $_SESSION["IsLoggedIn"] = true;
+
     }
     // Anfrage an die URI /user weiterleiten (HTTP 302)
     header('Location: /user');
@@ -51,12 +56,11 @@ class UserController
 
     public function Update()
     {
+      if ($_POST['send']) {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $userRepository->update($email, $password);
 
-      $view = new View('User_panel');
-      $view->title = 'benutzerDaten ändern';
-      $view->heading = 'benutzerDaten ändern';
-      $view->stylesheets = array("userPanel.css", "style.css");
-      $view->display();
     }
 
 

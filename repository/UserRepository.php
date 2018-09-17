@@ -13,7 +13,7 @@ class UserRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'user';
+    protected $tableName = 'Users';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -28,14 +28,14 @@ class UserRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function create($firstName, $lastName, $email, $password)
+    public function create($username, $email, $password)
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (Username, email, password) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $firstName, $lastName, $email, $password);
+        $statement->bind_param('sss', $username, $email, $password);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
@@ -43,4 +43,26 @@ class UserRepository extends Repository
 
         return $statement->insert_id;
     }
+
+
+    public function update($email, $password)
+    {
+        $password = sha1($password);
+        session_start();
+        $id = $_SESSION["id"];
+        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE id = $id";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ss', $email, $password);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+
+        return $statement->insert_id;
+    }
+
+
+
+
 }

@@ -5,14 +5,14 @@
 
 
     <div class="containerLogin">
-      <label for="uname"><b>Username:</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="username"><b>Username:</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
 
-      <label for="psw"><b>Password:</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="password"><b>Password:</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
 
-      <label for="rpsw"><b>Repeat Password:</b></label>
-      <input type="password" placeholder="Repeat Password" name="rpsw" required>
+      <label for="repeat password"><b>Repeat Password:</b></label>
+      <input type="password" placeholder="Repeat Password" name="repeat password" required>
 
        <label for="email"><b>Email:</b></label>
       <input type="text" placeholder="example@x.ch" name="email" required>
