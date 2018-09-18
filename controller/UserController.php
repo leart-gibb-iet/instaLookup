@@ -36,7 +36,7 @@ class UserController
     public function doUserPanel() 
     {
        
-        session_start();
+      
 
         $userRepository = new UserRepository();
 
@@ -48,7 +48,7 @@ class UserController
            $userRepository->update($_POST["email"], $_POST["password"]);
             
             header('Location: /');
-          }
+          }else{ var_dump("AUSFÜLLEN"); }
         
           if(isset($_POST["delete_account"])) {
           

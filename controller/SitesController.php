@@ -93,7 +93,7 @@ class SitesController
         
         $view = new View('user_panel');
         $view->title = $_SESSION["username"];
-        $view->heading = 'User Panel';    
+        $view->heading =  $_SESSION["username"];   
         $view->javascripts = array("modalForm.js");
         $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
         $view->display();
