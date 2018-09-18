@@ -43,12 +43,44 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
+    /**
+     * 
+     */
+    public function read($username, $password)
+    {
+        $password = sha1($password);
 
+        $query = "SELECT * FROM $this->tableName WHERE username = ? AND password = ?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ss', $username, $password);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+        
+       
+        if ($result->num_rows == 1) {
+           
+            return  $result->fetch_array(MYSQLI_ASSOC);
+        
+        }else{   
+
+            // ERROR HANDLING!!!!
+        }
+       
+    }
+
+    /**
+     * 
+     */
     public function update($email, $password) //Die Function Update erstellt
     {
         $password = sha1($password);
-        session_start();
-        $id = $_SESSION["id"];
+       // session_start();
+        $username = $_SESSION["username"];
         $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -62,7 +94,7 @@ class UserRepository extends Repository
     }
 
     
-
-
+    
+  
 
 }

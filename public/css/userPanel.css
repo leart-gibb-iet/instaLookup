@@ -1,12 +1,5 @@
-.FormUserPanel {
-margin-top: 100px;
+.row.profile {
 
-}
-
-.userPanel {
-
-  justify-content: center;
   text-align: center;
-  flex-direction: column;
-  float: right;
+  justify-content: center;
 }
