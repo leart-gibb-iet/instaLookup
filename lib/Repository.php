@@ -159,12 +159,26 @@ class Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
+<<<<<<< HEAD
+
     public function deleteByUsername($username)
+
+=======
+    public function deleteByUsername($username)
+>>>>>>> a8a80d31c0120b384a9f5a023e0083f7104e3fab
     {
         $query = "DELETE FROM {$this->tableName} WHERE username=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
+<<<<<<< HEAD
+
+        $statement->bind_param('i', $username);
+
         $statement->bind_param('s', $username);
+
+=======
+        $statement->bind_param('s', $username);
+>>>>>>> a8a80d31c0120b384a9f5a023e0083f7104e3fab
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
