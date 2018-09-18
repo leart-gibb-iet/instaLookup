@@ -79,18 +79,12 @@ class UserRepository extends Repository
     public function update($email, $password) //Die Function Update erstellt
     {
         $password = sha1($password);
-<<<<<<< HEAD
-       // session_start();
-        var_dump($username = $_SESSION["username"]);
-        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
-=======
 
         session_start();
 
         $username = $_SESSION["username"];
 
         $query = "UPDATE $this->tableName SET email = ?, password = ? WHERE username = '$username'";
->>>>>>> a8a80d31c0120b384a9f5a023e0083f7104e3fab
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -101,6 +95,7 @@ class UserRepository extends Repository
 
        
     }
+    
 
     
     

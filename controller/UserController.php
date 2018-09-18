@@ -32,7 +32,10 @@ class UserController
 
 
     
-
+    /**
+     * UPDATE & DELETE
+     * 
+     */
     public function doUserPanel() 
     {
        
