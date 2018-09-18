@@ -95,7 +95,9 @@ class UserController
             session_destroy();
 
             // HTTP 302 redirect
-            header("Location: /sites/default_index.php");
+            header("Location: /");
+
+            var_dump("LOGOUT");
             exit;
     }
 
