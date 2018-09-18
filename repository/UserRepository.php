@@ -93,7 +93,7 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-        var_dump($statement->fetch_result);
+       
     }
 
     
