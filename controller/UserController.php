@@ -35,20 +35,24 @@ class UserController
 
     public function doUserPanel() 
     {
+       
+      
 
-        session_start();
         $userRepository = new UserRepository();
 
-        if(isset($_PUT["Change"])) {
-           
-           var_dump($userRepository->update($_PUT["email"], $_PUT["password"]));
-            exit;
-            header('Location: /');
-          }
+       
+
         
-          if(isset($_PUT["delete_account"])) {
+        if(isset($_POST["Change"])) {
+           
+           $userRepository->update($_POST["email"], $_POST["password"]);
+            
+            header('Location: /');
+          }else{ var_dump("AUSFÜLLEN"); }
+        
+          if(isset($_POST["delete_account"])) {
           
-            $userRepository->deleteByUsername($_PUT["username"]);
+            $userRepository->deleteByUsername($_POST["username"]);
 
             header('Location: /');
           }
@@ -65,19 +69,19 @@ class UserController
 
             $username = $_GET['username'];
             $password = $_GET['password'];
+           
             
             $result = $userRepository->read($username, $password);
 
-            
+         
         session_start();
         $_SESSION["username"] = $result["username"];
         $_SESSION["email"] = $result["email"];
         $_SESSION["IsLoggedIn"] = true;
    
-        var_dump("LOL");
-        exit;
-    }
+            header('Location: /');
         }
+    }
     
 
     public function doLogout() 

@@ -1,24 +1,8 @@
 .FormUserPanel {
 
-<<<<<<< HEAD
-}
-
-.userPanel {
-
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  float: right;
-  width: 100%;
-
-
-
-}
-=======
 padding-left: 5em;
 padding-right: 5em;
  margin-right: auto;
  margin-left: auto;
  max-width: 1000px;
 }
->>>>>>> 7f996068c1079b098478e43bfbb86399771dfecf

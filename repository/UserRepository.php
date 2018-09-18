@@ -44,7 +44,7 @@ class UserRepository extends Repository
     }
 
     /**
-     *
+     * 
      */
     public function read($username, $password)
     {
@@ -60,28 +60,37 @@ class UserRepository extends Repository
         }
 
         $result = $statement->get_result();
-
-
+        
+       
         if ($result->num_rows == 1) {
-
+           
             return  $result->fetch_array(MYSQLI_ASSOC);
-
-        }else{
-
+        
+        }else{   
+            exit;
             // ERROR HANDLING!!!!
         }
-
+       
     }
 
     /**
-     *
+     * 
      */
     public function update($email, $password) //Die Function Update erstellt
     {
         $password = sha1($password);
+<<<<<<< HEAD
        // session_start();
         var_dump($username = $_SESSION["username"]);
         $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
+=======
+
+        session_start();
+
+        $username = $_SESSION["username"];
+
+        $query = "UPDATE $this->tableName SET email = ?, password = ? WHERE username = '$username'";
+>>>>>>> a8a80d31c0120b384a9f5a023e0083f7104e3fab
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -90,12 +99,13 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-        var_dump($statement->insert_id);
-        exit;
+       
     }
 
-
-
-
+    
+    
+  
 
 }
+
+?>
