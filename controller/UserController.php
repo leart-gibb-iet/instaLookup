@@ -12,7 +12,7 @@ class UserController
 
         $userRepository = new UserRepository();
 
-        $view = new View('user_index');
+        $view = new View('user_panel');
         $view->title = 'Benutzer';
         $view->heading = 'Benutzer';
         $view->users = $userRepository->readAll();
@@ -25,14 +25,7 @@ class UserController
 
     }
 
-    public function create()
-    {
-        $view = new View('user_create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
-        $view->stylesheets = array("kontakt.css", "style.css");
-        $view->display();
-    }
+
 
     public function doCreate()
 {
@@ -50,7 +43,7 @@ class UserController
 
     }
     // Anfrage an die URI /user weiterleiten (HTTP 302)
-    header('Location: /user');
+    header('Location: sites/UserPanel');
 }
 
 
