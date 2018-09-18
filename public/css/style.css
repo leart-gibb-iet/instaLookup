@@ -13,3 +13,14 @@ p {
   text-align: center;
 
 }
+
+.navbar  {
+
+  background-color: #EF263E;
+
+}
+
+.navbar a {
+
+  color: White !important;
+}

@@ -49,7 +49,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password); //Hashed das Passwort
         session_start(); //Strartet eine neue Session
-        $id = $_SESSION["id"];  //Speichert die ID des users
+        $username = $_SESSION["username"];  //Speichert die ID des users
         $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE id = $id";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
