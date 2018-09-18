@@ -91,15 +91,15 @@ class Repository
      *
      * @return Der gesuchte Datensatz oder null, sollte dieser nicht existieren.
      */
-    public function readById($id)
+    public function readById($username)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE id=?";
+        $query = "SELECT * FROM {$this->tableName} WHERE username=?";
 
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $id);
+        $statement->bind_param('s', $username);
 
         // Das Statement absetzen
         $statement->execute();
@@ -159,12 +159,12 @@ class Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function deleteById($id)
+    public function deleteById($username)
     {
-        $query = "DELETE FROM {$this->tableName} WHERE id=?";
+        $query = "DELETE FROM {$this->tableName} WHERE username=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $id);
+        $statement->bind_param('s', $username);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

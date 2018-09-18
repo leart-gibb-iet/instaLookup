@@ -29,6 +29,8 @@ class UserController
 
     public function doCreate()
 {
+   
+
     if ($_POST['send']) {
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -36,14 +38,14 @@ class UserController
         $userRepository = new UserRepository();
         $id = $userRepository->create($username, $email, $password);
         session_start();
-        $_SESSION["id"] = $id;
+        $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
         $_SESSION["password"] = $password;
         $_SESSION["IsLoggedIn"] = true;
 
     }
     // Anfrage an die URI /user weiterleiten (HTTP 302)
-    header('Location: sites/UserPanel');
+   // header('Location: ../sites/UserPanel');
 }
 
 
@@ -61,6 +63,12 @@ class UserController
         header('Location: /user');
     }
 
+    public function Delete() {
+
+
+        
+        
+    }
 
 
 }

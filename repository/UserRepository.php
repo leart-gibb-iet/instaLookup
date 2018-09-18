@@ -13,7 +13,7 @@ class UserRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'Users';
+    protected $tableName = 'users';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -21,8 +21,7 @@ class UserRepository extends Repository
      * Das Passwort wird vor dem ausführen des Queries noch mit dem SHA1
      *  Algorythmus gehashed.
      *
-     * @param $firstName Wert für die Spalte firstName
-     * @param $lastName Wert für die Spalte lastName
+     * @param $username Wert für die Spalte username
      * @param $email Wert für die Spalte email
      * @param $password Wert für die Spalte password
      *
@@ -32,7 +31,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (Username, email, password) VALUES (?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (username, email, password) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss', $username, $email, $password);
@@ -50,7 +49,7 @@ class UserRepository extends Repository
         $password = sha1($password);
         session_start();
         $id = $_SESSION["id"];
-        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE id = $id";
+        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -62,6 +61,7 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
+    
 
 
 

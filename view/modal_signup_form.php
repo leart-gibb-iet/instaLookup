@@ -1,7 +1,7 @@
 
 
   <!-- Modal Content -->
-  <form class="modal-content animate signup" action="/user/doCreate" id="id02">
+  <form class="modal-content animate signup" action="/user/doCreate" id="id02" method="post">
 
     <!-- Sign Up Formular -->
     <div class="containerLogin">
@@ -12,7 +12,7 @@
       <input type="password" placeholder="Enter Password" name="password" required>
 
       <label for="repeat password"><b>Repeat Password:</b></label>
-      <input type="password" placeholder="Repeat Password" name="repeat password" required>
+      <input type="password" placeholder="Repeat Password" name="repeat_password" required>
 
        <label for="email"><b>Email:</b></label>
       <input type="text" placeholder="example@x.ch" name="email" required>

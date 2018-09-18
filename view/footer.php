@@ -1,6 +1,6 @@
         <hr>
         <footer>
-          <p>&copy; instaLookup</p>
+          <p>&copy; instaLookup | <a href="sites/Impressum">Impressum</a></p>
         </footer>
     </div>
     <!-- jQuery & Bootstrap scripts -->
