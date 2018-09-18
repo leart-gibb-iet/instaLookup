@@ -8,26 +8,6 @@ require_once '../repository/UserRepository.php';
 class UserController
 {
 
-    public function index()
-    {
-
-        $userRepository = new UserRepository();
-
-        $view = new View('user_panel');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
-        $view->users = $userRepository->readAll();
-        $view->display();
-
-
-
-        // Anfrage an die URI /user/create weiterleiten (HTTP 302)
-        header('Location: /user/create');
-
-    }
-
-
-
     public function doCreate()
     {
     
@@ -53,20 +33,22 @@ class UserController
 
     
 
-    public function doUserPanel() {
+    public function doUserPanel() 
+    {
 
+        session_start();
         $userRepository = new UserRepository();
 
-        if(isset($_POST["Change"])) {
+        if(isset($_PUT["Change"])) {
            
-            $userRepository->update($_POST["email"], $_POST["password"]);
-
+           var_dump($userRepository->update($_PUT["email"], $_PUT["password"]));
+            exit;
             header('Location: /');
           }
         
-          if(isset($_POST["delete_account"])) {
+          if(isset($_PUT["delete_account"])) {
           
-            $userRepository->deleteByUsername($_POST["username"]);
+            $userRepository->deleteByUsername($_PUT["username"]);
 
             header('Location: /');
           }
@@ -74,7 +56,8 @@ class UserController
     }
 
 
-    public function doLogin() {
+    public function doLogin() 
+    {
 
         $userRepository = new UserRepository();
 
@@ -97,7 +80,8 @@ class UserController
         }
     
 
-    public function doLogout() {
+    public function doLogout() 
+    {
 
             // Initialize the session.
             session_start();

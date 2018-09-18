@@ -3,7 +3,7 @@
 <div id="id01" class="modal">
  
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/user/doLogin" action="get">
+  <form class="modal-content animate" action="/user/doLogin" method="get">
  
   <!-- Login Formular -->
     <div class="containerLogin">

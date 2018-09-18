@@ -1,5 +1,8 @@
-.row.profile {
+.FormUserPanel {
 
-  text-align: center;
-  justify-content: center;
+padding-left: 5em;
+padding-right: 5em;
+ margin-right: auto;
+ margin-left: auto;
+ max-width: 1000px;
 }

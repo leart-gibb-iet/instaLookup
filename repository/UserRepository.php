@@ -80,7 +80,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
        // session_start();
-        $username = $_SESSION["username"];
+        var_dump($username = $_SESSION["username"]);
         $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
@@ -90,7 +90,8 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-        return $statement->insert_id;
+        var_dump($statement->insert_id);
+        exit;
     }
 
     
