@@ -159,7 +159,6 @@ class Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-
     public function deleteByUsername($username)
     {
         $query = "DELETE FROM $this->tableName WHERE username = ?";

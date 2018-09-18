@@ -76,6 +76,7 @@ class UserRepository extends Repository
     /**
      * 
      */
+    
     public function update($email, $password) //Die Function Update erstellt
     {
         $password = sha1($password);
