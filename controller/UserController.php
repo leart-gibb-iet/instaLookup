@@ -35,20 +35,24 @@ class UserController
 
     public function doUserPanel() 
     {
-
+       
         session_start();
+
         $userRepository = new UserRepository();
 
-        if(isset($_PUT["Change"])) {
+       
+
+        
+        if(isset($_POST["Change"])) {
            
-           var_dump($userRepository->update($_PUT["email"], $_PUT["password"]));
-            exit;
+           $userRepository->update($_POST["email"], $_POST["password"]);
+            
             header('Location: /');
           }
         
-          if(isset($_PUT["delete_account"])) {
+          if(isset($_POST["delete_account"])) {
           
-            $userRepository->deleteByUsername($_PUT["username"]);
+            $userRepository->deleteByUsername($_POST["username"]);
 
             header('Location: /');
           }

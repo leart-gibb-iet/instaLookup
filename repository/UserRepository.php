@@ -67,7 +67,7 @@ class UserRepository extends Repository
             return  $result->fetch_array(MYSQLI_ASSOC);
         
         }else{   
-
+            exit;
             // ERROR HANDLING!!!!
         }
        
@@ -80,8 +80,8 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
        // session_start();
-        var_dump($username = $_SESSION["username"]);
-        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
+        $username = $_SESSION["username"];
+        $query = "UPDATE $this->tableName SET email = ?, password = ? WHERE username = $username";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -90,8 +90,6 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-        var_dump($statement->insert_id);
-        exit;
     }
 
     
