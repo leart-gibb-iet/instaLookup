@@ -1,12 +1,9 @@
-﻿DROP TABLE IF EXISTS user;
-CREATE TABLE  user (
-  id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  firstName VARCHAR(64)  NOT NULL,
-  lastName  VARCHAR(64)  NOT NULL,
-  email     VARCHAR(128) NOT NULL,
-  password  VARCHAR(40)  NOT NULL,
-  PRIMARY KEY  (id)
+﻿DROP TABLE IF EXISTS users;
+CREATE TABLE  users (
+  username VARCHAR(40) NOT NULL,
+  email VARCHAR(60),
+  password  VARCHAR(60)  NOT NULL,
+  PRIMARY KEY  (username)
 );
 
-INSERT INTO user (firstName, lastName, email, password) VALUES ('Ramon',  'Binz',  'ramon.binz@bbcag.ch',   sha1('ramon'));
-INSERT INTO user (firstName, lastName, email, password) VALUES ('Samuel', 'Wicky', 'samuel.wicky@bbcag.ch', sha1('samuel'));
+INSERT INTO user (firstName, lastName, email, password) VALUES ('Tester', 'Test@test.ch',   sha1('test'));

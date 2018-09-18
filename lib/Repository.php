@@ -99,7 +99,7 @@ class Repository
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $username);
+        $statement->bind_param('s', $username);
 
         // Das Statement absetzen
         $statement->execute();
@@ -159,12 +159,20 @@ class Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
+<<<<<<< HEAD
     public function deleteById($username)
+=======
+    public function deleteByUsername($username)
+>>>>>>> 7f996068c1079b098478e43bfbb86399771dfecf
     {
         $query = "DELETE FROM {$this->tableName} WHERE username=?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
+<<<<<<< HEAD
         $statement->bind_param('i', $username);
+=======
+        $statement->bind_param('s', $username);
+>>>>>>> 7f996068c1079b098478e43bfbb86399771dfecf
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

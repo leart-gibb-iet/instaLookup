@@ -1,6 +1,6 @@
 .FormUserPanel {
-margin-top: 100px;
 
+<<<<<<< HEAD
 }
 
 .userPanel {
@@ -14,3 +14,11 @@ margin-top: 100px;
 
 
 }
+=======
+padding-left: 5em;
+padding-right: 5em;
+ margin-right: auto;
+ margin-left: auto;
+ max-width: 1000px;
+}
+>>>>>>> 7f996068c1079b098478e43bfbb86399771dfecf

@@ -7,62 +7,92 @@ require_once '../repository/UserRepository.php';
  */
 class UserController
 {
-    public function index()
-    {
-
-        $userRepository = new UserRepository();
-
-        $view = new View('user_panel');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
-        $view->users = $userRepository->readAll();
-        $view->display();
-
-
-
-        // Anfrage an die URI /user/create weiterleiten (HTTP 302)
-        header('Location: /user/create');
-
-    }
-
-
 
     public function doCreate()
-{
+    {
+    
 
     if (isset($_POST)) {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $userRepository = new UserRepository();
-        $id = $userRepository->create($username, $email, $password);
+        $userRepository->create($username, $email, $password);
 
         session_start();
         $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
-        $_SESSION["password"] = $password;
         $_SESSION["IsLoggedIn"] = true;
 
     }
-    // Anfrage an die URI /user weiterleiten (HTTP 302)
+     // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /sites/UserPanel');
-}
+    }
 
 
-    public function Update()
+
+    
+
+    public function doUserPanel() 
     {
-      if ($_POST['send']) {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $userRepository->update($email, $password);
 
+        session_start();
+        $userRepository = new UserRepository();
+
+        if(isset($_PUT["Change"])) {
+           
+           var_dump($userRepository->update($_PUT["email"], $_PUT["password"]));
+            exit;
+            header('Location: /');
+          }
+        
+          if(isset($_PUT["delete_account"])) {
+          
+            $userRepository->deleteByUsername($_PUT["username"]);
+
+            header('Location: /');
+          }
+        
     }
 
 
-        // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+    public function doLogin() 
+    {
+
+        $userRepository = new UserRepository();
+
+        if(isset($_GET["login"])) {
+
+            $username = $_GET['username'];
+            $password = $_GET['password'];
+            
+            $result = $userRepository->read($username, $password);
+
+            
+        session_start();
+        $_SESSION["username"] = $result["username"];
+        $_SESSION["email"] = $result["email"];
+        $_SESSION["IsLoggedIn"] = true;
+   
+        var_dump("LOL");
+        exit;
     }
+        }
+    
 
+    public function doLogout() 
+    {
 
+            // Initialize the session.
+            session_start();
+            // Unset all of the session variables.
+            unset($_SESSION);
+            // destroy the session.    
+            session_destroy();
+
+            // HTTP 302 redirect
+            header("Location: /sites/default_index.php");
+            exit;
+    }
 
 }

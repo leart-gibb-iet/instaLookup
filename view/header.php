@@ -37,13 +37,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">instaLookup</a>
+          <a data-toggle="collapse" data-target=".nav-collapse" class="navbar-brand" href="/">instaLookup</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/sites/UserPanel">User Panel</a></li>
-			      <li><a href="/sites/impressum">Impressum</a></li>
-	      		<li><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
+            <li><a data-toggle="collapse" data-target=".nav-collapse" href="/sites/UserPanel">User Panel</a></li>
+	      		<li><a data-toggle="collapse" data-target=".nav-collapse" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

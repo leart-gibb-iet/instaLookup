@@ -21,8 +21,7 @@ class UserRepository extends Repository
      * Das Passwort wird vor dem ausführen des Queries noch mit dem SHA1
      *  Algorythmus gehashed.
      *
-     * @param $firstName Wert für die Spalte firstName
-     * @param $lastName Wert für die Spalte lastName
+     * @param $username Wert für die Spalte username
      * @param $email Wert für die Spalte email
      * @param $password Wert für die Spalte password
      *
@@ -32,7 +31,7 @@ class UserRepository extends Repository
     {
         $password = sha1($password);
 
-        $query = "INSERT INTO $this->tableName (username, email, passwort) VALUES (?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (username, email, password) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss', $username, $email, $password);
@@ -44,13 +43,52 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
+    /**
+     *
+     */
+    public function read($username, $password)
+    {
+        $password = sha1($password);
 
+        $query = "SELECT * FROM $this->tableName WHERE username = ? AND password = ?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ss', $username, $password);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+
+
+        if ($result->num_rows == 1) {
+
+            return  $result->fetch_array(MYSQLI_ASSOC);
+
+        }else{
+
+            // ERROR HANDLING!!!!
+        }
+
+    }
+
+    /**
+     *
+     */
     public function update($email, $password) //Die Function Update erstellt
     {
+<<<<<<< HEAD
         $password = sha1($password); //Hashed das Passwort
         session_start(); //Strartet eine neue Session
         $username = $_SESSION["username"];  //Speichert die ID des users
         $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE id = $id";
+=======
+        $password = sha1($password);
+       // session_start();
+        var_dump($username = $_SESSION["username"]);
+        $query = "UPDATE $this->tableName SET email = $email, password = $password WHERE username = $username";
+>>>>>>> 7f996068c1079b098478e43bfbb86399771dfecf
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss', $email, $password);
@@ -59,8 +97,10 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-        return $statement->insert_id;
+        var_dump($statement->insert_id);
+        exit;
     }
+
 
 
 
