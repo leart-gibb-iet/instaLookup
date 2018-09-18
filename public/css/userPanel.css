@@ -3,8 +3,10 @@ margin-top: 100px;
 
 }
 
-.container_UserPanel .FormUserPanel {
+.userPanel {
 
-    float: center;
-
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  float: right;
 }
