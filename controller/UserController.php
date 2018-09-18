@@ -29,14 +29,20 @@ class UserController
 
     public function doCreate()
 {
+<<<<<<< HEAD
    
 
     if ($_POST['send']) {
+=======
+
+    if (isset($_POST)) {
+>>>>>>> 1590916fc30d8873018c8322ff9ece15f3112ee7
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $userRepository = new UserRepository();
         $id = $userRepository->create($username, $email, $password);
+
         session_start();
         $_SESSION["username"] = $username;
         $_SESSION["email"] = $email;
@@ -45,7 +51,11 @@ class UserController
 
     }
     // Anfrage an die URI /user weiterleiten (HTTP 302)
+<<<<<<< HEAD
    // header('Location: ../sites/UserPanel');
+=======
+        header('Location: /sites/UserPanel');
+>>>>>>> 1590916fc30d8873018c8322ff9ece15f3112ee7
 }
 
 

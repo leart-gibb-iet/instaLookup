@@ -1,7 +1,11 @@
 
 
   <!-- Modal Content -->
+<<<<<<< HEAD
   <form class="modal-content animate signup" action="/user/doCreate" id="id02" method="post">
+=======
+  <form class="modal-content animate signup" action="/user/doCreate" method='post' id="id02">
+>>>>>>> 1590916fc30d8873018c8322ff9ece15f3112ee7
 
     <!-- Sign Up Formular -->
     <div class="containerLogin">
@@ -11,7 +15,11 @@
       <label for="password"><b>Password:</b></label>
       <input type="password" placeholder="Enter Password" name="password" required>
 
+<<<<<<< HEAD
       <label for="repeat password"><b>Repeat Password:</b></label>
+=======
+      <label for="repeat_password"><b>Repeat Password:</b></label>
+>>>>>>> 1590916fc30d8873018c8322ff9ece15f3112ee7
       <input type="password" placeholder="Repeat Password" name="repeat_password" required>
 
        <label for="email"><b>Email:</b></label>
