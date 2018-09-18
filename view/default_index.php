@@ -1,4 +1,4 @@
-
+<div class="InstagramSearchBox">
 
     <!-- Instagram Search Form -->
     <form class="form-inline" onsubmit="return false;">
@@ -21,5 +21,4 @@
         <img id="profileImageContainer">
     </div>
 
-    
-
+  </div>

@@ -69,19 +69,19 @@ class UserController
 
             $username = $_GET['username'];
             $password = $_GET['password'];
+           
             
             $result = $userRepository->read($username, $password);
 
-            
+         
         session_start();
         $_SESSION["username"] = $result["username"];
         $_SESSION["email"] = $result["email"];
         $_SESSION["IsLoggedIn"] = true;
    
-        var_dump("LOL");
-        exit;
-    }
+            header('Location: /');
         }
+    }
     
 
     public function doLogout() 

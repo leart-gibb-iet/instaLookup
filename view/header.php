@@ -15,7 +15,6 @@
 
 
     <?php
-    // include CSS sources, can be included in the Controller
     if(isset($stylesheets))
     {
         foreach($stylesheets as $style)
@@ -26,10 +25,9 @@
         }
     }
     ?>
-  
+
   </head>
   <body>
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -46,10 +44,10 @@
             <li><a data-toggle="collapse" data-target=".nav-collapse" href="/sites/UserPanel">User Panel</a></li>
 	      		<li><a data-toggle="collapse" data-target=".nav-collapse" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
           </ul>
-        </div>
+        </div><!--/.nav-collapse -->
       </div>
     </nav>
-    
-    
-    <!-- $heading = name of the Site -->
+
+    <div class="container">
+
     <h1><?= $heading ?></h1>

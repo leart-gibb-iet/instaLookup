@@ -15,8 +15,8 @@
       <label for="repeat_password"><b>Repeat Password:</b></label>
       <input type="password" placeholder="Repeat Password" name="repeat_password" required>
 
-       <label for="email"><b>Email:</b></label>
-      <input type="email" placeholder="example@x.ch" name="email" required>
+      <label for="email"><b>Email:</b></label>
+      <input type="text" placeholder="example@x.ch" name="email" required>
 
       <button type="submit" id="signUpFormBtn" class="btn btn-default">Sign Up</button>
     </div>
