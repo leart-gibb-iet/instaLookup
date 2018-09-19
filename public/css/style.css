@@ -26,7 +26,7 @@ p {
 }
 
 html {
-
+  background-color: #EF263E;
   height: 100%;
 }
 
@@ -34,4 +34,14 @@ html {
 
   display: none;
   color: red;
+}
+
+.navbar-toggle {
+  background-color: #CE2E80;
+  border: none;
+
+}
+
+footer {
+  padding: 70px;
 }

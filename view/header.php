@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="<?= $title ?>" lang="de">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +27,9 @@
     ?>
 
   </head>
-  <body>
+
+
+  <body class="<?= $pageColor ?>">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
