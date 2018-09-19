@@ -28,14 +28,12 @@ $(document).ready(function () {
  *  
  */
 function getInstagramProfileId() {
-
   
-    
     
 
     var username = $("#userName").val();
     var profileUrl = "https://www.instagram.com/" + username + "/";
-    debugger;
+    
     $(function () {
 
         $.ajax({

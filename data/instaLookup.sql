@@ -6,4 +6,4 @@ CREATE TABLE  users (
   PRIMARY KEY  (username)
 );
 
-INSERT INTO user (firstName, lastName, email, password) VALUES ('Tester', 'Test@test.ch',   sha1('test'));
+INSERT INTO users (username, email, password) VALUES ('Tester', 'Test@test.ch',   sha1('test'));
