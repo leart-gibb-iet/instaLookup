@@ -72,7 +72,7 @@ class SitesController
         $view->heading =  $_SESSION["username"];
         $view->javascripts = array("main.js");
         $view->pageColor = "userPanel";
-        $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
+        $view->stylesheets = array("style.css", "userPanel.css");
         $view->display();
 
     }

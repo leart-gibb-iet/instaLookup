@@ -4,9 +4,9 @@
               <br>
                 <label for="email"> <b>Email:</b></label> <br>
 
-                <input class="form-control" type="text" placeholder="New Email" name="email" required/><br>
+                <input type="text" placeholder="New Email" name="email" required/><br>
 
-                <label for="password"> <b>password:</b></label> <br>
+                <label for="password"> <b>Password:</b></label> <br>
                 <input class="pwd" type="password" placeholder="New Password" name="password" required /><br>
 
                 <label for="password_required"> <b>Repeat password:</b></label> <br>

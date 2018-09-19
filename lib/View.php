@@ -80,7 +80,7 @@ class View
 
     public function display()
     {
-   
+        session_start();
 
         if($_SESSION["IsLoggedIn"] == true) {
 
