@@ -5,7 +5,8 @@
         <div class="form-group">
             <label for="userName"></label>
             <input type="text" class="form-control" id="userName" placeholder="Enter Instagram Username">
-            <button type="button" id="showImageButton" class="btn btn-default">Show Image</button>
+            <button type="button" id="showImageButton" <?php if(!isset($_SESSION["IsLoggedIn"]) || $_SESSION["IsLoggedIn"] == false || empty($_SESSION["IsLoggedIn"])) {echo "disabled"; } ?> class="btn btn-default">Show Image</button>
+           
         </div>
     </form>
 
