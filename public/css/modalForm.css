@@ -26,7 +26,7 @@
     /* Position it in the top right corner outside of the modal */
     position: absolute;
     right: 25px;
-    top: 0; 
+    top: 0;
     color: #000;
     font-size: 35px;
     font-weight: bold;
@@ -46,12 +46,12 @@
 }
 
 @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
 }
 
 @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
 }
 
@@ -94,7 +94,7 @@ button:hover {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    
+
 }
 
 .signupbtn {
@@ -114,13 +114,13 @@ button:hover {
 /* Add padding to containers */
 .containerLogin {
     padding: 16px;
-    
-} 
+
+}
 
 
 
 @media screen and (max-width: 300px) {
-  
+
     .cancelbtn {
         width: 100%;
     }
@@ -138,3 +138,6 @@ button:hover {
 
 }
 
+.login {
+  color: #D53877;
+}

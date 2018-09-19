@@ -39,6 +39,7 @@ class SitesController
         $view = new View('default_index');
         $view->title = 'instaLookup';
         $view->heading = 'instaLookup';
+        $view->pageColor = "InstaLookup";
         $view->stylesheets = array("modalForm.css","instagramSearch.css","style.css");
         $view->javascripts = array("instagramSearch.js", "modalForm.js");
         $view->display();
@@ -52,6 +53,7 @@ class SitesController
         $view = new View('impressum');
         $view->title = 'Impressum';
         $view->heading = 'Impressum';
+        $view->pageColor = "Impressum";
         $view->stylesheets = array("modalForm.css","impressum.css","style.css");
         $view->javascripts = array("modalForm.js");
         $view->display();
@@ -66,25 +68,16 @@ class SitesController
         $view = new View('login');
         $view->title = 'Login';
         $view->heading = 'Login';
+        $view->pageColor = "login";
         $view->stylesheets = array("style.css","modalForm.css");
         $view->javascripts = array("modalForm.js");
         $view->display();
 
     }
 
-    public function kontakt()
-	{
-		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
-        //   "kontakt" rendern. Wie das genau funktioniert, ist in der
-        //   View Klasse beschrieben.
-        $view = new View('kontakt');
-        $view->title = 'Kontakt';
-        $view->heading = 'Kontakt';
-        $view->stylesheets = array("style.css","modalForm.css");
-        $view->javascripts = array("modalForm.js");
-        $view->display();
 
-    }
+
+
 
       public function userPanel()
       {
@@ -94,6 +87,7 @@ class SitesController
         $view = new View('user_panel');
         $view->title = $_SESSION["username"];
         $view->heading =  $_SESSION["username"];
+        $view->pageColor = "userPanel";
         $view->javascripts = array("modalForm.js");
         $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
         $view->display();
