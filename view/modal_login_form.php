@@ -3,7 +3,7 @@
 <div id="id01" class="modal">
  
   <!-- Modal Content -->
-  <form class="modal-content animate" action="/user/doLogin" method="get">
+  <form class="modal-content animate" action="/user/doLogin" method="post">
  
   <!-- Login Formular -->
     <div class="containerLogin">
@@ -15,7 +15,7 @@
 
       <button type="submit" id="loginFormBtn" name="login" class="btn btn-default">Login</button>
     </div>
-
+    <div class="wrongPwd"><?php $msgPwd ?></div>
     <!-- Cancel Button & Sign Up Button -->
     <div class="containerLogin" style="background-color:#f1f1f1">
       <button class="btn btn-default cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button>

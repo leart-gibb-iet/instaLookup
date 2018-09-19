@@ -90,22 +90,30 @@ class UserController
 
         $userRepository = new UserRepository();
 
-        if(isset($_GET["login"])) {
+        if(isset($_POST["login"])) {
 
-            $username = $_GET['username'];
-            $password = $_GET['password'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
            
             
             $result = $userRepository->read($username, $password);
 
          
+        if($result["username"] != NULL) {
+
         session_start();
         $_SESSION["username"] = $result["username"];
         $_SESSION["email"] = $result["email"];
         $_SESSION["IsLoggedIn"] = true;
-   
-            header('Location: /');
+
+        header('Location: /');
+
+        }else{
+        
+            $msgPwd = "Wrong password";
+            
         }
+      }
     }
     
 

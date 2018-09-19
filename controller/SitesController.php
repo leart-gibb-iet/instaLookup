@@ -63,6 +63,10 @@ class SitesController
 
     public function userPanel()
     {
+        // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
+        //   "impressum" rendern. Wie das genau funktioniert, ist in der
+        //   View Klasse beschrieben.
+            
         if(!isset($_SESSION)) {
             session_start();
         }

@@ -62,14 +62,11 @@ class UserRepository extends Repository
         $result = $statement->get_result();
         
        
-        if ($result->num_rows == 1) {
+    
            
             return  $result->fetch_array(MYSQLI_ASSOC);
         
-        }else{   
-            exit;
-            // ERROR HANDLING!!!!
-        }
+        
        
     }
 

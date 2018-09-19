@@ -26,3 +26,15 @@
 .InstaLookup {
   color: #D53877;
 }
+
+#userName {
+
+  display: center;
+
+}
+
+#showImageButton {
+
+background-color: #D53877;
+color: white;
+}
