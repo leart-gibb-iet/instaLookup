@@ -70,19 +70,19 @@ class SitesController
         if(!isset($_SESSION)) {
             session_start();
         }
-        
 
-        if($_SESSION["IsLoggedIn"] == true) {
+
+        if($_SESSION["IsLoggedIn"] == true) {//sieht nach ob user eingeloggt ist
 
             $view = new View('user_panel');
-            
+
             $view->title = $_SESSION["username"];
             $view->heading =  $_SESSION["username"];
             $view->javascripts = array("main.js");
             $view->pageColor = "userPanel";
             $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
             $view->display();
-            
+
         }else{
 
             header('Location: /');
