@@ -50,4 +50,4 @@
 
     <div class="container">
 
-    <h1><?= $heading ?></h1>
+    <h1><?= htmlentities($heading) ?></h1>

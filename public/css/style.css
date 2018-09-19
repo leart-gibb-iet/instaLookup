@@ -1,5 +1,6 @@
 body {
   padding-top: 50px;
+  
 }
 
 h1 {
@@ -26,7 +27,7 @@ p {
 }
 
  html {
-  background-color: #EF263E;
+  color: #EF263E;
   height: 100%;
 }
 

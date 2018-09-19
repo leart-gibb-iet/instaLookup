@@ -80,9 +80,12 @@ class View
 
     public function display()
     {
-        session_start();
+        if(!isset($_SESSION)) {
+            session_start();
+        }
+        
 
-        if($_SESSION["IsLoggedIn"] == true) {
+        if(isset($_SESSION["IsLoggedIn"]) && $_SESSION["IsLoggedIn"] == true) {
 
             extract($this->properties);
 

@@ -63,17 +63,27 @@ class SitesController
 
     public function userPanel()
     {
-        session_start();
-
-
-        $view = new View('user_panel');
+        if(!isset($_SESSION)) {
+            session_start();
+        }
         
-        $view->title = $_SESSION["username"];
-        $view->heading =  $_SESSION["username"];
-        $view->javascripts = array("main.js");
-        $view->pageColor = "userPanel";
-        $view->stylesheets = array("style.css", "userPanel.css");
-        $view->display();
+
+        if($_SESSION["IsLoggedIn"] == true) {
+
+            $view = new View('user_panel');
+            
+            $view->title = $_SESSION["username"];
+            $view->heading =  $_SESSION["username"];
+            $view->javascripts = array("main.js");
+            $view->pageColor = "userPanel";
+            $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
+            $view->display();
+            
+        }else{
+
+            header('Location: /');
+
+        }
 
     }
 
