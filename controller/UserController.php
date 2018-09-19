@@ -7,10 +7,10 @@ require_once '../repository/UserRepository.php';
  */
 class UserController
 {
-
+    //Funktion für das Erstellen von Users 
     public function doCreate()
     {
-    
+
 
     if (isset($_POST)) {
         $username = $_POST['username'];
@@ -36,16 +36,16 @@ class UserController
         $userRepository = new UserRepository();
 
         $valid = $userRepository->read($_SESSION["username"], $_POST["password"]);
-        
+
         $confirmPwd = sha1($_POST["password"]);
-        
+
         if($confirmPwd == $valid["password"]) {
-            
+
             $userRepository->deleteByUsername($_SESSION["username"]);
 
        }else{
 
-            
+
         // DO SOMETHING
 
        }
@@ -54,38 +54,40 @@ class UserController
 
     }
 
-    
+
     /**
      * UPDATE & DELETE
-     * 
+     *
      */
-    public function doUserPanel() 
+    public function doUserPanel()
     {
-       
+
         $userRepository = new UserRepository();
 
-        
+
         if(isset($_POST["Change"])) {
-           
+
                 $userRepository->update($_POST["email"], $_POST["password"]);
-            
+
               header('Location: /');
 
        }
-        
+
           if(isset($_POST["delete_account"])) {
-              
-           
+
+
 
             $userRepository->deleteByUsername($_POST["username"]);
 
             header('Location: /');
           }
-        
+
     }
 
-
-    public function doLogin() 
+    /**
+    * Öffnet das Login Feld
+    */
+    public function doLogin()
     {
 
         $userRepository = new UserRepository();
@@ -94,11 +96,11 @@ class UserController
 
             $username = $_POST['username'];
             $password = $_POST['password'];
-           
-            
+
+
             $result = $userRepository->read($username, $password);
 
-         
+
         if($result["username"] != NULL) {
 
         session_start();
@@ -109,22 +111,22 @@ class UserController
         header('Location: /');
 
         }else{
-        
+
             $msgPwd = "Wrong password";
-            
+
         }
       }
     }
-    
 
-    public function doLogout() 
+      //Die Funkton die den aktuellen User ausloggt
+    public function doLogout()
     {
 
             // Initialize the session.
             session_start();
             // Unset all of the session variables.
             unset($_SESSION);
-            // destroy the session.    
+            // destroy the session.
             session_destroy();
 
             // HTTP 302 redirect
