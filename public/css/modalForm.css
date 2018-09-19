@@ -104,7 +104,7 @@ button:hover {
     float: right;
 }
 
-#signUpFormBtn {
+#formBtn {
 
     width: 100%;
 
@@ -132,9 +132,4 @@ button:hover {
 
 
 
-.modal-content.animate.signup {
-
-    display: none;
-
-}
 

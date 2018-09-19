@@ -80,15 +80,29 @@ class View
 
     public function display()
     {
-        extract($this->properties);
+   
+
+        if($_SESSION["IsLoggedIn"] == true) {
+
+            extract($this->properties);
+
+            require './../view/header_logged_in.php';
+            require $this->viewfile;
+            require './../view/footer.php';
+
+        }else{
+
+            extract($this->properties);
 
         require './../view/header.php';
         require $this->viewfile;
         require './../view/modal_signup_form.php';
         require './../view/modal_login_form.php';
         require './../view/footer.php';
-       
+        }
+    
     }
+
 
   
 }
