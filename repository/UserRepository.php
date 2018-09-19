@@ -73,7 +73,6 @@ class UserRepository extends Repository
     /**
      * 
      */
-    
     public function update($email, $password) //Die Function Update erstellt
     {
        

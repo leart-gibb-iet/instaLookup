@@ -1,4 +1,8 @@
+      
       <!-- User Panel -->
+      <?php if(isset($_SESSION["error"])) { ?>
+        <div class=notDeleted>Password is Wrong!</div>
+      <?php } ?>
       <div class="FormUserPanel">
               <form action="/user/doUserPanel" method="post">
               <br>

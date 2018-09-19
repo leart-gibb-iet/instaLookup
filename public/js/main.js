@@ -9,7 +9,9 @@ function signUpForward() {
 
 }
 
-
+/**
+ *  is used to validate Signup and Userpanel  password confirmation
+ */
 function initializePasswordFields() {
     
     var pwdFields = document.getElementsByClassName("pwd");
@@ -22,6 +24,9 @@ function initializePasswordFields() {
 
 }
 
+/**
+ *  is used to validate Signup and Userpanel password confirmation
+ */
 function validatePassword() {
 
     var pwdFields = document.getElementsByClassName("pwd");

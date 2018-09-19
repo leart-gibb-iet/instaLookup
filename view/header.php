@@ -28,7 +28,7 @@
 
   </head>
 
-
+  <!-- Navigation -->
   <body class="<?= $pageColor ?>">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -45,7 +45,7 @@
           <ul class="nav navbar-nav">
             <li><a data-toggle="collapse" data-target=".nav-collapse" onclick="document.getElementById('id01').style.display='block'">Login</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 

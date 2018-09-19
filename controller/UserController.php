@@ -42,11 +42,9 @@ class UserController
         if($confirmPwd == $valid["password"]) {
             
             $userRepository->deleteByUsername($_SESSION["username"]);
-
        }else{
-
-            
-        // DO SOMETHING
+            $_SESSION["error"] = "wrong password";
+            header('Location: /sites/UserPanel');
 
        }
 
@@ -110,7 +108,7 @@ class UserController
 
         }else{
         
-            $msgPwd = "Wrong password";
+            header('Location: /');
             
         }
       }

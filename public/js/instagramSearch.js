@@ -29,10 +29,10 @@ $(document).ready(function () {
  */
 function getInstagramProfileId() {
 
-    $("#profileImageContainer").attr("src", "https://picload.org/thumbnail/dlwrgiow/ufo-2.jpg");
-    // testing purpose
+  
     
-/*
+    
+
     var username = $("#userName").val();
     var profileUrl = "https://www.instagram.com/" + username + "/";
     debugger;
@@ -59,7 +59,7 @@ function getInstagramProfileId() {
         });
 
     });
-*/
+
 
 }
 

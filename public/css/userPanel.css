@@ -24,3 +24,10 @@ padding-right: 5em;
 .userPanel {
   color: #C23291;
 }
+
+.notDeleted {
+
+  text-align: center;
+  color: red;
+ 
+}
