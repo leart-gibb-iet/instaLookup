@@ -37,15 +37,16 @@ class UserController
 
         $valid = $userRepository->read($_SESSION["username"], $_POST["password"]);
         
-
-        if($_POST["password"] == $valid["password"]) {
-
+        $confirmPwd = sha1($_POST["password"]);
+        
+        if($confirmPwd == $valid["password"]) {
+            
             $userRepository->deleteByUsername($_SESSION["username"]);
 
        }else{
 
             
-
+        // DO SOMETHING
 
        }
 
