@@ -11,6 +11,7 @@ padding-right: 5em;
 
 .userPanel {
   color: #C23291;
+  height: fit-content;
 }
 
 /* Full-width inputs */
