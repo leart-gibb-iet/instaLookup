@@ -41,7 +41,7 @@ class SitesController
         $view->heading = 'instaLookup';
         $view->pageColor = "InstaLookup";
         $view->stylesheets = array("modalForm.css","instagramSearch.css","style.css");
-        $view->javascripts = array("instagramSearch.js", "modalForm.js");
+        $view->javascripts = array("instagramSearch.js", "main.js");
         $view->display();
     }
 
@@ -55,44 +55,27 @@ class SitesController
         $view->heading = 'Impressum';
         $view->pageColor = "Impressum";
         $view->stylesheets = array("modalForm.css","impressum.css","style.css");
-        $view->javascripts = array("modalForm.js");
-        $view->display();
-
-    }
-
-	public function login()
-	{
-		 // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
-        //   "login" rendern. Wie das genau funktioniert, ist in der
-        //   View Klasse beschrieben.
-        $view = new View('login');
-        $view->title = 'Login';
-        $view->heading = 'Login';
-        $view->pageColor = "login";
-        $view->stylesheets = array("style.css","modalForm.css");
-        $view->javascripts = array("modalForm.js");
+        $view->javascripts = array("main.js");
         $view->display();
 
     }
 
 
-
-
-
-      public function userPanel()
-      {
+    public function userPanel()
+    {
         session_start();
 
 
         $view = new View('user_panel');
+        
         $view->title = $_SESSION["username"];
         $view->heading =  $_SESSION["username"];
+        $view->javascripts = array("main.js");
         $view->pageColor = "userPanel";
-        $view->javascripts = array("modalForm.js");
         $view->stylesheets = array("style.css", "modalForm.css", "userPanel.css");
         $view->display();
 
-      }
+    }
 
 
 

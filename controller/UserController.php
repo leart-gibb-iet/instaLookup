@@ -29,7 +29,29 @@ class UserController
         header('Location: /sites/UserPanel');
     }
 
+    public function doDeleteAccount() {
 
+        session_start();
+
+        $userRepository = new UserRepository();
+
+        $valid = $userRepository->read($_SESSION["username"], $_POST["password"]);
+        
+
+        if($_POST["password"] == $valid["password"]) {
+
+            $userRepository->deleteByUsername($_SESSION["username"]);
+
+       }else{
+
+            
+
+
+       }
+
+
+
+    }
 
     
     /**
@@ -39,22 +61,21 @@ class UserController
     public function doUserPanel() 
     {
        
-      
-
         $userRepository = new UserRepository();
-
-       
 
         
         if(isset($_POST["Change"])) {
            
-           $userRepository->update($_POST["email"], $_POST["password"]);
+                $userRepository->update($_POST["email"], $_POST["password"]);
             
-            header('Location: /');
-          }else{ var_dump("AUSFÜLLEN"); }
+              header('Location: /');
+
+       }
         
           if(isset($_POST["delete_account"])) {
-          
+              
+           
+
             $userRepository->deleteByUsername($_POST["username"]);
 
             header('Location: /');

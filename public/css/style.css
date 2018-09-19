@@ -30,6 +30,12 @@ html {
   height: 100%;
 }
 
+#validatePwd {
+
+  display: none;
+  color: red;
+}
+
 .navbar-toggle {
   background-color: #CE2E80;
   border: none;
