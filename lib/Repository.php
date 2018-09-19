@@ -161,7 +161,7 @@ class Repository
      */
     public function deleteByUsername($username)
     {
-        $query = "DELETE FROM {$this->tableName} WHERE username=?";
+        $query = "DELETE FROM $this->tableName WHERE username = ?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $username);

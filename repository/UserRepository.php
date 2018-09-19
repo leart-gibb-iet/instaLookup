@@ -44,7 +44,7 @@ class UserRepository extends Repository
     }
 
     /**
-     *
+     * 
      */
     public function read($username, $password)
     {
@@ -60,22 +60,23 @@ class UserRepository extends Repository
         }
 
         $result = $statement->get_result();
-
-
+        
+       
         if ($result->num_rows == 1) {
-
+           
             return  $result->fetch_array(MYSQLI_ASSOC);
-
-        }else{
+        
+        }else{   
             exit;
             // ERROR HANDLING!!!!
         }
-
+       
     }
 
     /**
-     *
+     * 
      */
+    
     public function update($email, $password) //Die Function Update erstellt
     {
         $password = sha1($password);
@@ -93,12 +94,13 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-
+       
     }
+    
 
-
-
-
+    
+    
+  
 
 }
 
