@@ -27,6 +27,8 @@ class UserRepository extends Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
+
+     //Unser Create vom CRUD
     public function create($username, $email, $password)
     {
         $password = sha1($password);
@@ -44,7 +46,7 @@ class UserRepository extends Repository
     }
 
     /**
-     * 
+     * Unser Read vom CRUD
      */
     public function read($username, $password)
     {
@@ -60,22 +62,22 @@ class UserRepository extends Repository
         }
 
         $result = $statement->get_result();
-        
-       
-    
-           
+
+
+
+
             return  $result->fetch_array(MYSQLI_ASSOC);
-        
-        
-       
+
+
+
     }
 
     /**
-     * 
+     * Unser Update vom CRUD
      */
     public function update($email, $password) //Die Function Update erstellt
     {
-       
+
         $password = sha1($password);
 
         session_start();
@@ -91,13 +93,13 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
 
-       
-    }
-    
 
-    
-    
-  
+    }
+
+
+
+
+
 
 }
 

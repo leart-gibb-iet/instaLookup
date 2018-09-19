@@ -159,6 +159,10 @@ class Repository
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
+
+
+
+     //Unser DELETE vom CRUD
     public function deleteByUsername($username)
     {
     echo("Hello Girls");

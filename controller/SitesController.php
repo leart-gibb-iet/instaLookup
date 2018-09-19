@@ -66,13 +66,13 @@ class SitesController
         // In diesem Fall möchten wir dem Benutzer die View mit dem Namen
         //   "impressum" rendern. Wie das genau funktioniert, ist in der
         //   View Klasse beschrieben.
-            
+
         if(!isset($_SESSION)) {
             session_start();
         }
 
 
-        if($_SESSION["IsLoggedIn"] == true) {//sieht nach ob user eingeloggt ist
+        if($_SESSION["IsLoggedIn"] == true) {
 
             $view = new View('user_panel');
 
